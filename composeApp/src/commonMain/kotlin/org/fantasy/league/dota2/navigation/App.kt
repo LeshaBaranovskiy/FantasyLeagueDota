@@ -4,10 +4,13 @@ import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.BottomAppBar
@@ -51,6 +54,8 @@ import org.fantasy.league.dota2.core.presentation.splash.SplashScreenRoot
 import org.fantasy.league.dota2.core.presentation.splash.SplashScreenViewModel
 import org.fantasy.league.dota2.stats.presentation.all_stats.AllStatsScreen
 import org.fantasy.league.dota2.stats.presentation.all_stats.AllStatsScreenRoot
+import org.fantasy.league.dota2.stats.presentation.my_emblems.MyEmblemsScreen
+import org.fantasy.league.dota2.stats.presentation.my_emblems.MyEmblemsViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
@@ -70,6 +75,7 @@ fun App() {
         }
 
         Scaffold(
+            contentWindowInsets = WindowInsets.safeDrawing,
             snackbarHost = {
                 SnackbarHost(snackbarHostState) {
                     Snackbar(snackbarData = it)
@@ -104,10 +110,12 @@ fun App() {
                                         modifier = Modifier.padding(top = 4.dp)
                                     )
                                 },
-                                selected = false,
+                                selected = navController.currentBackStackEntryAsState().value?.destination?.route == Routes.MyEmblemsScreen::class.qualifiedName,
                                 modifier = Modifier.fillMaxWidth(),
                                 onClick = {
-
+                                    navController.navigate(
+                                        Routes.MyEmblemsScreen
+                                    )
                                 }
                             )
 
@@ -128,87 +136,91 @@ fun App() {
                                         modifier = Modifier.padding(top = 4.dp)
                                     )
                                 },
-                                selected = true,
+                                selected = navController.currentBackStackEntryAsState().value?.destination?.route == Routes.StatsScreen::class.qualifiedName,
                                 modifier = Modifier.fillMaxWidth(),
                                 onClick = {
-
+                                    navController.navigate(
+                                        Routes.StatsScreen
+                                    )
                                 }
                             )
                         }
                     }
                 }
             }
-        ) {
-            NavHost(
-                navController = navController,
-                startDestination = Routes.FantasyLeagueGraph,
-                enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Start, tween(
-                            500
-                        )
-                    )
-                },
-                exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Start, tween(
-                            500
-                        )
-                    )
-                },
-                popEnterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.End, tween(
-                            500
-                        )
-                    )
-                },
-                popExitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.End, tween(
-                            500
-                        )
-                    )
-                },
+        ) { innerPadding ->
+            Box(
                 modifier = Modifier
-                    .background(MaterialTheme.colorScheme.background)
+                    .padding(innerPadding)
             ) {
-                navigation<Routes.FantasyLeagueGraph>(
-                    startDestination = Routes.SplashScreen,
+                NavHost(
+                    navController = navController,
+                    startDestination = Routes.FantasyLeagueGraph,
+                    enterTransition = {
+                        slideIntoContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Start, tween(
+                                500
+                            )
+                        )
+                    },
+                    exitTransition = {
+                        slideOutOfContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Start, tween(
+                                500
+                            )
+                        )
+                    },
+                    popEnterTransition = {
+                        slideIntoContainer(
+                            AnimatedContentTransitionScope.SlideDirection.End, tween(
+                                500
+                            )
+                        )
+                    },
+                    popExitTransition = {
+                        slideOutOfContainer(
+                            AnimatedContentTransitionScope.SlideDirection.End, tween(
+                                500
+                            )
+                        )
+                    },
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.background)
                 ) {
-                    composable<Routes.SplashScreen> {
-                        val viewModel = it.sharedKoinViewModel<SplashScreenViewModel>(navController)
+                    navigation<Routes.FantasyLeagueGraph>(
+                        startDestination = Routes.SplashScreen,
+                    ) {
+                        composable<Routes.SplashScreen> {
+                            val viewModel =
+                                it.sharedKoinViewModel<SplashScreenViewModel>(navController)
 
-                        SplashScreenRoot(
-                            splashScreenViewModel = viewModel
-                        ) {
-                            navController.navigate(
-                                Routes.StatsScreen
+                            SplashScreenRoot(
+                                splashScreenViewModel = viewModel
+                            ) {
+                                navController.navigate(
+                                    Routes.StatsScreen
+                                )
+                            }
+                        }
+                        composable<Routes.MyEmblemsScreen> {
+                            val viewModel = koinViewModel<MyEmblemsViewModel>()
+                            val splashViewModel =
+                                it.sharedKoinViewModel<SplashScreenViewModel>(navController)
+
+                            MyEmblemsScreen(
+                                splashScreenViewModel = splashViewModel,
+                                myEmblemsViewModel = viewModel
                             )
                         }
-                    }
-                    composable<Routes.MyEmblemsScreen> {
-//                    val viewModel = koinViewModel<LoginViewModel>()
-//
-//                    LoginScreenRoot(
-//                        viewModel = viewModel,
-//                        onLoginResultRedirect = {
-//
-//                        },
-//                        onSignUpClick = {
-//                            navController.navigate(Routes.SignUpScreen)
-//                        },
-//                        onForgotPasswordClick = {},
-//                        modifier = Modifier
-//                    )
-                    }
 
-                    composable<Routes.StatsScreen> {
-                        val viewModel = it.sharedKoinViewModel<SplashScreenViewModel>(navController)
+                        composable<Routes.StatsScreen> {
+                            val viewModel =
+                                it.sharedKoinViewModel<SplashScreenViewModel>(navController)
 
-                        AllStatsScreenRoot(
-                            viewModel
-                        )
+                            AllStatsScreenRoot(
+                                viewModel
+                            )
+                        }
                     }
                 }
             }

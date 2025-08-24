@@ -53,7 +53,7 @@ fun PlayerCard(
             .fillMaxWidth()
             .border(
                 1.dp,
-                color = Color(0xFFEEEEEE),
+                color = Color(0xFF000000),
                 shape = RoundedCornerShape(12.dp)
             )
             .padding(8.dp)

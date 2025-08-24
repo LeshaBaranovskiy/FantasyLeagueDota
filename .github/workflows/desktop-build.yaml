@@ -1,0 +1,60 @@
+name: Desktop builds
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  MODULE: composeApp
+  JAVA_VERSION: '17'
+  GRADLE_OPTS: '-Dorg.gradle.daemon=false -Dkotlin.daemon.useFallbackStrategy=false'
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            tasks: ":${{ env.MODULE }}:packageExe :${{ env.MODULE }}:packageMsi"
+            artifact_label: windows
+          - os: macos-latest
+            tasks: ":${{ env.MODULE }}:packageDmg"
+            artifact_label: macos
+          - os: ubuntu-latest
+            tasks: ":${{ env.MODULE }}:packageDeb :${{ env.MODULE }}:packageAppImage"
+            artifact_label: linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Gradle cache
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make gradlew executable (unix)
+        if: runner.os != 'Windows'
+        run: chmod +x ./gradlew
+
+      - name: Build desktop artifacts
+        run: ./gradlew ${{ matrix.tasks }} --stacktrace
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop-${{ matrix.artifact_label }}
+          path: |
+            ${{ env.MODULE }}/build/compose/binaries/**/*
+          if-no-files-found: warn
