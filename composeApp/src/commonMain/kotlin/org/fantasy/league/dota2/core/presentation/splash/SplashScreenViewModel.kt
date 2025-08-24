@@ -1,6 +1,8 @@
 package org.fantasy.league.dota2.core.presentation.splash
 
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,13 +29,13 @@ import org.fantasy.league.dota2.core.common.otherwordlyHeroes
 import kotlin.math.roundToInt
 
 class SplashScreenViewModel: ViewModel() {
-    private val _stats = MutableStateFlow<List<GameStats>>(emptyList())
-    val stats: StateFlow<List<GameStats>> = _stats
+    private val _stats = mutableStateOf<List<GameStats>>(emptyList())
+    val stats: State<List<GameStats>> = _stats
 
-    private val _playerStats = MutableStateFlow<MutableList<Pair<Player, PlayerStats?>>>(
+    private val _playerStats = mutableStateOf<MutableList<Pair<Player, PlayerStats?>>>(
         mutableListOf()
     )
-    val playerStats: StateFlow<List<Pair<Player, PlayerStats?>>> = _playerStats
+    val playerStats: State<List<Pair<Player, PlayerStats?>>> = _playerStats
 
     fun addGameStats(gameStat: GameStats) {
         val newList = _stats.value.toMutableList().apply {

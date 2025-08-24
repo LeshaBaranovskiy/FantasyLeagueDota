@@ -115,8 +115,8 @@ compose.desktop {
         mainClass = "org.fantasy.league.dota2.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.fantasy.league.dota2"
+            targetFormats(TargetFormat.Exe)
+            packageName = "Fantasy League Calculator"
             packageVersion = "1.0.0"
         }
     }
