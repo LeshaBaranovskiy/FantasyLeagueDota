@@ -115,9 +115,13 @@ compose.desktop {
         mainClass = "org.fantasy.league.dota2.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Exe)
+            targetFormats(TargetFormat.Dmg)
             packageName = "Fantasy League Calculator"
             packageVersion = "1.0.0"
+
+            windows {
+                iconFile.set(project.file("src/desktopMain/resources/icons/fantasy_league_logo.ico"))
+            }
         }
     }
 }
