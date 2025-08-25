@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.fantasy.league.dota2.core.common.CalculatorPlayerStats
+import org.fantasy.league.dota2.core.common.Team
 import org.fantasy.league.dota2.core.common.prefixes
 import org.fantasy.league.dota2.core.common.suffixes
 import org.jetbrains.compose.resources.painterResource
@@ -84,6 +85,18 @@ fun CalculatorPlayerCard(
             }
         }
 
+        if (playerStats.playerStats.first.team == Team.Wildcart || playerStats.playerStats.first.team == Team.Nemesis) {
+            Text(
+                text = "Цей гравець з команди-аутсайдера та через брак кількість матчів по яким був аналіз обмежена. НЕ рекомендую обирати",
+                style = TextStyle(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier
+                    .padding(vertical = 4.dp)
+            )
+        }
+
         Text(
             text = "Prefixes",
             style = TextStyle(
@@ -105,6 +118,8 @@ fun CalculatorPlayerCard(
                         fontWeight = FontWeight.Medium,
                         fontSize = 15.sp,
                     ),
+                    modifier = Modifier
+                        .weight(1f)
                 )
 
                 Text(
@@ -138,6 +153,8 @@ fun CalculatorPlayerCard(
                         fontWeight = FontWeight.Medium,
                         fontSize = 15.sp,
                     ),
+                    modifier = Modifier
+                        .weight(1f)
                 )
 
                 Text(

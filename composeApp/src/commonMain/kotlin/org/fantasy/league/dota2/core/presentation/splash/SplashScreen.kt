@@ -27,7 +27,7 @@ fun SplashScreenRoot(
     redirect: () -> Unit,
 ) {
     LaunchedEffect(true) {
-        for (i in 1..473) {
+        for (i in 1..602) {
             val stats = loadGameStats(
                 "${i}"
             )

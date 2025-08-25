@@ -53,7 +53,7 @@ sealed class Player(
             Yuma, _4nalog, Wisper, Scofield, KJ,
 
             // Xtreme Gaming
-            Ame, Xm, Xxs, XinQ, poloson,
+            Ame, Xm, Xxs, XinQ, xNova,
 
             // Wildcard
             Yamsun, RCY, Fayde, Bignum, Speeed
@@ -68,18 +68,18 @@ sealed class Player(
     object Insania: Player(name = "Insania", 76561198014846690, Liquid, Role.SUPPORT)
 
     //Parivision
-    object Satanic: Player(name = "Satanic", 76561199004267995, Parivision, Role.CORE)
-    object Noone: Player(name = "No[o]ne", 76561198066839629, Parivision, Role.MID)
-    object DM: Player(name = "DM", 76561198016617237, Parivision, Role.CORE)
-    object NineClass: Player(name = "9Class", 76561198124464930, Parivision, Role.SUPPORT)
-    object Dukalis: Player(name = "Dukalis", 76561198033666810, Parivision, Role.SUPPORT)
+    object Satanic: Player(name = "Satanic \uD83D\uDC3D", 76561199004267995, Parivision, Role.CORE)
+    object Noone: Player(name = "No[o]ne \uD83D\uDC18", 76561198066839629, Parivision, Role.MID)
+    object DM: Player(name = "DM \uD83D\uDC3D", 76561198016617237, Parivision, Role.CORE)
+    object NineClass: Player(name = "9Class \uD83D\uDC3D", 76561198124464930, Parivision, Role.SUPPORT)
+    object Dukalis: Player(name = "Dukalis \uD83D\uDC3D", 76561198033666810, Parivision, Role.SUPPORT)
 
     //BB
-    object Pure: Player(name = "Pure", 76561198292121258, BetBoom, Role.CORE)
-    object gpk: Player(name = "gpk", 76561198440678391, BetBoom, Role.MID)
-    object MieRo: Player(name = "MieRo", 76561198125830326, BetBoom, Role.CORE)
-    object Save: Player(name = "Save-", 76561198278146366, BetBoom, Role.SUPPORT)
-    object Kataomi: Player(name = "Kataomi", 76561198157143864, BetBoom, Role.SUPPORT)
+    object Pure: Player(name = "Pure \uD83E\uDD21", 76561198292121258, BetBoom, Role.CORE)
+    object gpk: Player(name = "gpk \uD83D\uDC3D", 76561198440678391, BetBoom, Role.MID)
+    object MieRo: Player(name = "MieRo \uD83D\uDC3D", 76561198125830326, BetBoom, Role.CORE)
+    object Save: Player(name = "Save- \uD83D\uDC3D", 76561198278146366, BetBoom, Role.SUPPORT)
+    object Kataomi: Player(name = "Kataomi \uD83D\uDC3D", 76561198157143864, BetBoom, Role.SUPPORT)
 
     //Team Tidebound
     object shiro: Player(name = "shiro", 76561198280517752, TeamTidebound, Role.CORE)
@@ -96,15 +96,15 @@ sealed class Player(
     object Malady: Player(name = "Malady", 76561198054083399, GaiminGladiators, Role.SUPPORT)
 
     //Team Spirit
-    object Yatoro: Player(name = "Yatoro", 76561198281846390, TeamSpirit, Role.CORE)
-    object Larl: Player(name = "Larl", 76561198066570770, TeamSpirit, Role.MID)
-    object Collapse: Player(name = "Collapse", 76561198262479756, TeamSpirit, Role.CORE)
-    object rue: Player(name = "rue", 76561198807831324, TeamSpirit, Role.SUPPORT)
-    object Miposhka: Player(name = "Miposhka", 76561198073597242, TeamSpirit, Role.SUPPORT)
+    object Yatoro: Player(name = "Yatoro \uD83D\uDC18", 76561198281846390, TeamSpirit, Role.CORE)
+    object Larl: Player(name = "Larl \uD83D\uDC3D", 76561198066570770, TeamSpirit, Role.MID)
+    object Collapse: Player(name = "Collapse \uD83D\uDC3D", 76561198262479756, TeamSpirit, Role.CORE)
+    object rue: Player(name = "rue \uD83D\uDC3D", 76561198807831324, TeamSpirit, Role.SUPPORT)
+    object Miposhka: Player(name = "Miposhka \uD83D\uDC3D", 76561198073597242, TeamSpirit, Role.SUPPORT)
 
     //Team Falcons
     object skiter: Player(name = "skiter", 76561198060324070, TeamFalcons, Role.CORE)
-    object Marl1ne: Player(name = "Marl1ne", 76561198858721548, TeamFalcons, Role.MID)
+    object Marl1ne: Player(name = "Marl1ne \uD83D\uDC3D", 76561198858721548, TeamFalcons, Role.MID)
     object ATF: Player(name = "ATF", 76561198143985114, TeamFalcons, Role.CORE)
     object Cr1t: Player(name = "Cr1t-", 76561197986172872, TeamFalcons, Role.SUPPORT)
     object Sneyking: Player(name = "Sneyking", 76561197970632344, TeamFalcons, Role.SUPPORT)
@@ -117,11 +117,11 @@ sealed class Player(
     object Whitemon: Player(name = "Whitemon", 76561198097094819, TundraEsports, Role.SUPPORT)
 
     //Natus Vincere
-    object gotthejuice: Player(name = "gotthejuice", 76561198917469777, NatusVincere, Role.CORE)
-    object Niku: Player(name = "Niku", 76561198145856102, NatusVincere, Role.MID)
-    object pma: Player(name = "pma", 76561198796129863, NatusVincere, Role.CORE)
-    object Zayac: Player(name = "Zayac", 76561198071296043, NatusVincere, Role.SUPPORT)
-    object Riddys: Player(name = "Riddys", 76561198091257032, NatusVincere, Role.SUPPORT)
+    object gotthejuice: Player(name = "gotthejuice \uD83D\uDC51", 76561198917469777, NatusVincere, Role.CORE)
+    object Niku: Player(name = "Niku \uD83D\uDC51", 76561198145856102, NatusVincere, Role.MID)
+    object pma: Player(name = "pma \uD83D\uDC51", 76561198796129863, NatusVincere, Role.CORE)
+    object Zayac: Player(name = "Zayac \uD83D\uDC51", 76561198071296043, NatusVincere, Role.SUPPORT)
+    object Riddys: Player(name = "Riddys \uD83D\uDC51", 76561198091257032, NatusVincere, Role.SUPPORT)
 
     //Nigma Galaxy
     object Ghost: Player(name = "Ghost", 76561198166908095, NigmaGalaxy, Role.CORE)
@@ -131,11 +131,11 @@ sealed class Player(
     object GH: Player(name = "GH", 76561198061622614, NigmaGalaxy, Role.SUPPORT)
 
     //Aurora Gaming
-    object Nightfall: Player(name = "Nightfall", 76561198085066985, Aurora, Role.CORE)
-    object kiyotaka: Player(name = "kiyotaka", 76561198818372174, Aurora, Role.MID)
-    object TORONTOTOKYO: Player(name = "TORONTOTOKYO", 76561198392036633, Aurora, Role.CORE)
-    object Mira: Player(name = "Mira", 76561198216422051, Aurora, Role.SUPPORT)
-    object panto: Player(name = "panto", 76561198069224497, Aurora, Role.SUPPORT)
+    object Nightfall: Player(name = "Nightfall \uD83D\uDC3D", 76561198085066985, Aurora, Role.CORE)
+    object kiyotaka: Player(name = "kiyotaka \uD83D\uDC3D", 76561198818372174, Aurora, Role.MID)
+    object TORONTOTOKYO: Player(name = "TORONTOTOKYO \uD83D\uDC3D", 76561198392036633, Aurora, Role.CORE)
+    object Mira: Player(name = "Mira \uD83D\uDC18", 76561198216422051, Aurora, Role.SUPPORT)
+    object panto: Player(name = "panto \uD83D\uDC3D", 76561198069224497, Aurora, Role.SUPPORT)
 
     // Boom Esports
     object JaCkky: Player(name = "JaCkky", steamId = 76561198352830965, BoomEsports, Role.CORE)
@@ -163,7 +163,7 @@ sealed class Player(
     object Xm: Player(name = "Xm", steamId = 76561198097395311, XtremeGaming, Role.MID)
     object Xxs: Player(name = "Xxs", steamId = 76561198090224486, XtremeGaming, Role.CORE)
     object XinQ: Player(name = "XinQ", steamId = 76561198117741251, XtremeGaming, Role.SUPPORT)
-    object poloson: Player(name = "poloson", steamId = 76561198037170520, XtremeGaming, Role.SUPPORT)
+    object xNova: Player(name = "xNova", steamId = 76561198054561825, XtremeGaming, Role.SUPPORT)
 
     // Wildcard
     object Yamsun: Player(name = "Yamsun", steamId = 76561198041741031, Wildcart, Role.CORE)
