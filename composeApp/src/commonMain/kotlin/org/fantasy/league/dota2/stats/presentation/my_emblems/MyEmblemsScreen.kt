@@ -9,7 +9,6 @@ import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -22,8 +21,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -39,20 +36,12 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.fantasy.league.dota2.core.common.Emblems
-import org.fantasy.league.dota2.core.common.Emblems.Creeps
-import org.fantasy.league.dota2.core.common.Emblems.Deaths
-import org.fantasy.league.dota2.core.common.Emblems.GPM
-import org.fantasy.league.dota2.core.common.Emblems.Kills
-import org.fantasy.league.dota2.core.common.Emblems.Madstones
-import org.fantasy.league.dota2.core.common.Emblems.Towers
-import org.fantasy.league.dota2.core.common.Player
+import org.fantasy.league.dota2.core.common.Filter
 import org.fantasy.league.dota2.core.common.Role
 import org.fantasy.league.dota2.core.common.blueEmblems
 import org.fantasy.league.dota2.core.common.greenEmblems
 import org.fantasy.league.dota2.core.common.redEmblems
 import org.fantasy.league.dota2.core.presentation.splash.SplashScreenViewModel
-import org.fantasy.league.dota2.navigation.Routes
 import org.fantasy.league.dota2.stats.presentation.components.CalculatorPlayerCard
 import org.fantasy.league.dota2.stats.presentation.components.SimpleDropdown
 import org.koin.compose.viewmodel.koinViewModel
@@ -65,6 +54,7 @@ fun MyEmblemsScreen(
 ) {
     val allPlayerStats = splashScreenViewModel.playerStats
     val roleSelected = myEmblemsViewModel.selectedRole
+    val filterSelected = myEmblemsViewModel.selectedFilter
 
     //Core
     val firstCoreRedEmblem = myEmblemsViewModel.firstCoreRedEmblem
@@ -97,6 +87,10 @@ fun MyEmblemsScreen(
     val supportPlayersStats = myEmblemsViewModel.supportPlayersStats
 
     val scrollState = rememberLazyListState()
+
+    LaunchedEffect(allPlayerStats) {
+        myEmblemsViewModel.setAllPlayersStats(allPlayerStats.value.toMutableList())
+    }
 
     LazyColumn(
         state = scrollState,
@@ -203,6 +197,80 @@ fun MyEmblemsScreen(
             }
         }
 
+        item {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp, horizontal = 8.dp)
+            ) {
+                Text(
+                    text = "Filter by:",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    modifier = Modifier
+                        .padding(end = 8.dp)
+                )
+
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable {
+                            myEmblemsViewModel.selectFilter(Filter.BY_AVERAGE)
+                        }
+                        .background(
+                            color = if (filterSelected.value == Filter.BY_AVERAGE) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.background
+                        )
+                        .border(
+                            1.dp,
+                            Color(0xFF3F1818),
+                            RoundedCornerShape(8.dp)
+                        )
+                        .padding(vertical = 4.dp, horizontal = 12.dp)
+                ) {
+                    Text(
+                        text = "By average",
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = if (filterSelected.value == Filter.BY_AVERAGE) Color.White else Color.Black
+                        ),
+                    )
+                }
+
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable {
+                            myEmblemsViewModel.selectFilter(Filter.BY_TOP)
+                        }
+                        .background(
+                            color = if (filterSelected.value == Filter.BY_TOP) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.background
+                        )
+                        .border(
+                            1.dp,
+                            Color(0xFF3F1818),
+                            RoundedCornerShape(8.dp)
+                        )
+                        .padding(vertical = 4.dp, horizontal = 12.dp)
+                ) {
+                    Text(
+                        text = "By top",
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = if (filterSelected.value == Filter.BY_TOP) Color.White else Color.Black
+                        ),
+                    )
+                }
+            }
+        }
+
         if (roleSelected.value == Role.CORE) {
             item {
                 Row(
@@ -214,6 +282,7 @@ fun MyEmblemsScreen(
                     SimpleDropdown(
                         selectedEmblem = firstCoreRedEmblem.value,
                         options = redEmblems,
+                        borderColor = Color(0xFF950606),
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setFirstCoreRedEmblem(emblemSelected)
                         },
@@ -225,7 +294,7 @@ fun MyEmblemsScreen(
                         value = firstCoreRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -252,6 +321,7 @@ fun MyEmblemsScreen(
                     SimpleDropdown(
                         selectedEmblem = firstCoreGreenEmblem.value,
                         options = greenEmblems,
+                        borderColor = Color(0xFF06402B),
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setFirstCoreGreenEmblem(emblemSelected)
                         },
@@ -263,7 +333,7 @@ fun MyEmblemsScreen(
                         value = firstCoreGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -290,6 +360,7 @@ fun MyEmblemsScreen(
                     SimpleDropdown(
                         selectedEmblem = secondCoreRedEmblem.value,
                         options = redEmblems,
+                        borderColor = Color(0xFF950606),
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setSecondCoreRedEmblem(emblemSelected)
                         },
@@ -301,7 +372,7 @@ fun MyEmblemsScreen(
                         value = secondCoreRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -359,6 +430,7 @@ fun MyEmblemsScreen(
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setMidRedEmblem(emblemSelected)
                         },
+                        borderColor = Color(0xFF950606),
                         modifier = Modifier
                             .weight(0.6f)
                     )
@@ -367,7 +439,7 @@ fun MyEmblemsScreen(
                         value = midRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -394,6 +466,7 @@ fun MyEmblemsScreen(
                     SimpleDropdown(
                         selectedEmblem = midGreenEmblem.value,
                         options = greenEmblems,
+                        borderColor = Color(0xFF06402B),
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setMidGreenEmblem(emblemSelected)
                         },
@@ -405,7 +478,7 @@ fun MyEmblemsScreen(
                         value = midGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -435,6 +508,7 @@ fun MyEmblemsScreen(
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setMidBlueEmblem(emblemSelected)
                         },
+                        borderColor = Color.Blue,
                         modifier = Modifier
                             .weight(0.6f)
                     )
@@ -443,7 +517,7 @@ fun MyEmblemsScreen(
                         value = midBlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -501,6 +575,7 @@ fun MyEmblemsScreen(
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setSupport1BlueEmblem(emblemSelected)
                         },
+                        borderColor = Color.Blue,
                         modifier = Modifier
                             .weight(0.6f)
                     )
@@ -509,7 +584,7 @@ fun MyEmblemsScreen(
                         value = support1BlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -539,6 +614,7 @@ fun MyEmblemsScreen(
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setSupportGreenEmblem(emblemSelected)
                         },
+                        borderColor = Color(0xFF06402B),
                         modifier = Modifier
                             .weight(0.6f)
                     )
@@ -547,7 +623,7 @@ fun MyEmblemsScreen(
                         value = supportGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->
@@ -577,6 +653,7 @@ fun MyEmblemsScreen(
                         onSelected = { emblemSelected ->
                             myEmblemsViewModel.setSupport2BlueEmblem(emblemSelected)
                         },
+                        borderColor = Color.Blue,
                         modifier = Modifier
                             .weight(0.6f)
                     )
@@ -585,7 +662,7 @@ fun MyEmblemsScreen(
                         value = support2BlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
                         label = {
                             Text(
-                                "Emblem buff, %"
+                                "Buff, %"
                             )
                         },
                         onValueChange = { newPercent ->

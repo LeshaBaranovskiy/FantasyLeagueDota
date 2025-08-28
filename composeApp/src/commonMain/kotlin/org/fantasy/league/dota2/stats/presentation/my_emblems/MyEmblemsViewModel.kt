@@ -5,13 +5,22 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import org.fantasy.league.dota2.core.common.CalculatorPlayerStats
 import org.fantasy.league.dota2.core.common.Emblems
+import org.fantasy.league.dota2.core.common.Filter
 import org.fantasy.league.dota2.core.common.Player
 import org.fantasy.league.dota2.core.common.PlayerStats
 import org.fantasy.league.dota2.core.common.Role
 
 class MyEmblemsViewModel: ViewModel() {
+    private val _playerStats = mutableStateOf<MutableList<Pair<Player, PlayerStats?>>>(
+        mutableListOf()
+    )
+    val playerStats: State<List<Pair<Player, PlayerStats?>>> = _playerStats
+
     private val _selectedRole = mutableStateOf<Role>(Role.CORE)
     val selectedRole: State<Role> = _selectedRole
+
+    private val _selectedFilter = mutableStateOf<Filter>(Filter.BY_AVERAGE)
+    val selectedFilter: State<Filter> = _selectedFilter
 
     //Core
     private val _firstCoreRedEmblem = mutableStateOf<Emblems>(Emblems.Creeps)
@@ -78,6 +87,10 @@ class MyEmblemsViewModel: ViewModel() {
 
     private val _supportPlayersStats = mutableStateOf<MutableList<CalculatorPlayerStats>>(mutableListOf())
     val supportPlayersStats: State<List<CalculatorPlayerStats>> = _supportPlayersStats
+
+    fun setAllPlayersStats(newPlayerStats: MutableList<Pair<Player, PlayerStats?>>) {
+        _playerStats.value = newPlayerStats
+    }
 
     private fun calculateEmblemAverage(emblem: Emblems, playerStats: PlayerStats, percent: Float): Float {
         return when(emblem) {
@@ -242,8 +255,19 @@ class MyEmblemsViewModel: ViewModel() {
             )
         }
 
-        newList = newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        newList = if (_selectedFilter.value == Filter.BY_AVERAGE) {
+            newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        } else {
+            newList.sortedByDescending { it.playerTopScore }.toMutableList()
+        }
         _corePlayersStats.value = newList
+    }
+
+    fun selectFilter(filter: Filter) {
+        _selectedFilter.value = filter
+        calculateCorePlayerStats(_playerStats.value)
+        calculateMidPlayerStats(_playerStats.value)
+        calculateSupportPlayerStats(_playerStats.value)
     }
 
     fun selectRole(newRole: Role) {
@@ -345,7 +369,11 @@ class MyEmblemsViewModel: ViewModel() {
             )
         }
 
-        newList = newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        newList = if (_selectedFilter.value == Filter.BY_AVERAGE) {
+            newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        } else {
+            newList.sortedByDescending { it.playerTopScore }.toMutableList()
+        }
         _midPlayersStats.value = newList
     }
 
@@ -423,7 +451,11 @@ class MyEmblemsViewModel: ViewModel() {
             )
         }
 
-        newList = newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        newList = if (_selectedFilter.value == Filter.BY_AVERAGE) {
+            newList.sortedByDescending { it.playerAverageScore }.toMutableList()
+        } else {
+            newList.sortedByDescending { it.playerTopScore }.toMutableList()
+        }
         _supportPlayersStats.value = newList
     }
 }

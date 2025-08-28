@@ -26,6 +26,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -65,14 +66,16 @@ import org.koin.compose.viewmodel.koinViewModel
 fun App() {
     FantasyLeagueTheme {
         val navController = rememberNavController()
-        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        val navBackStackEntry = navController.currentBackStackEntryAsState().value?.destination?.route
         val snackbarHostState = remember { SnackbarHostState() }
         val scope = rememberCoroutineScope()
 
-        val showBottomBar = when(navController.currentBackStackEntryAsState().value?.destination?.route) {
-            Routes.SplashScreen::class.qualifiedName -> false
-            else -> true
-        }
+        val showBottomBar =
+            when (navController.currentBackStackEntryAsState().value?.destination?.route) {
+                Routes.MyEmblemsScreen::class.qualifiedName -> true
+                Routes.StatsScreen::class.qualifiedName -> true
+                else -> false
+            }
 
         Scaffold(
             contentWindowInsets = WindowInsets.safeDrawing,

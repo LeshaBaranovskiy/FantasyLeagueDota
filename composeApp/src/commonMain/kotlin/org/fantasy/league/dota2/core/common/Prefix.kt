@@ -4,22 +4,22 @@ sealed class Prefix(
     val bonus: Float,
     val name: String,
 ) {
-    object Hirsute: Prefix(1.10f, "Hirsute") //Conf
-    object Cerulean: Prefix(1.19f, "Cerulean")
-    object Crimson: Prefix(1.13f, "Crimson") //Conf
-    object Otherworldly: Prefix(1.13f, "Otherworldly") //Conf
-    object Brawny: Prefix(1.13f, "Brawny") //Conf
-    object Canny: Prefix(1.11f, "Canny") //Conf
-    object Sacrificial: Prefix(1.15f, "Sacrificial") //Conf
-    object Bestial: Prefix(1.15f, "Bestial") //Conf
-    object Balanced: Prefix(1.15f, "Balanced") //Conf
-    object Elemental: Prefix(1.15f, "Elemental") //Conf
-    object Coveted: Prefix(1.15f, "Coveted") //Conf
-    object Virtuoso: Prefix(1.13f, "Virtuoso") //Conf
-    object Emerald: Prefix(1.18f, "Emerald") //Conf
-    object Clutch: Prefix(1.11f, "Clutch") //Conf
-    object Dashing: Prefix(1.15f, "Dashing") //Conf
-    object Glamorous: Prefix(1.25f, "Glamorous") //Conf
+    object Hirsute: Prefix(1.10f, "Hirsute / Кошлатий") //Conf
+    object Cerulean: Prefix(1.19f, "Cerulean / Лазурний")
+    object Crimson: Prefix(1.13f, "Crimson / За Червоного Героя") //Conf
+    object Otherworldly: Prefix(1.13f, "Otherworldly / Потойбічний") //Conf
+    object Brawny: Prefix(1.13f, "Brawny / Дужий") //Conf
+    object Canny: Prefix(1.11f, "Canny / Кмітливий") //Conf
+    object Sacrificial: Prefix(1.15f, "Sacrificial / Жертовний") //Conf
+    object Bestial: Prefix(1.15f, "Bestial / Звіриний") //Conf
+    object Balanced: Prefix(1.15f, "Balanced / Урівноважений") //Conf
+    object Elemental: Prefix(1.15f, "Elemental / Елементальний") //Conf
+    object Coveted: Prefix(1.15f, "Coveted / Жаданий") //Conf
+    object Virtuoso: Prefix(1.13f, "Virtuoso / Віртуозний") //Conf
+    object Emerald: Prefix(1.18f, "Emerald / Смарагдовий") //Conf
+    object Clutch: Prefix(1.11f, "Clutch / Чіпкий") //Conf
+    object Dashing: Prefix(1.15f, "Dashing / Верткий") //Conf
+    object Glamorous: Prefix(1.25f, "Glamorous / Принадний") //Conf
 }
 
 //Confirmed

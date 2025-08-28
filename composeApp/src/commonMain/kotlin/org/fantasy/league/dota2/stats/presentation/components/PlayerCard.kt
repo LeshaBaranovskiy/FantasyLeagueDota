@@ -5,6 +5,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -107,36 +108,33 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Deaths: " + playerStats.second?.deathsAverage.toString(),
+                            text = "Deaths: \n" + playerStats.second?.deathsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Kills: " + playerStats.second?.killsAverage.toString(),
+                            text = "Kills: \n" + playerStats.second?.killsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Creeps: " + playerStats.second?.creepsAverage.toString(),
+                            text = "Creeps: \n" + playerStats.second?.creepsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
@@ -148,36 +146,33 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "GPM: " + playerStats.second?.gpmAverage.toString(),
+                            text = "GPM: \n" + playerStats.second?.gpmAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Towers: " + playerStats.second?.towersAverage.toString(),
+                            text = "Towers: \n" + playerStats.second?.towersAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Stones: " + playerStats.second?.madstoneAverage.toString(),
+                            text = "Stones: \n" + playerStats.second?.madstoneAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
@@ -192,7 +187,7 @@ fun PlayerCard(
                         .fillMaxWidth()
                 ) {
                     Text(
-                        text = "Stuns: " + playerStats.second?.stunsAverage.toString(),
+                        text = "Stuns: \n" + playerStats.second?.stunsAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -203,7 +198,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Torm: " + playerStats.second?.tormentorAverage.toString(),
+                        text = "Torm: \n" + playerStats.second?.tormentorAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -214,7 +209,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "FB: " + playerStats.second?.fbAverage?.toString(),
+                        text = "FB: \n" + playerStats.second?.fbAverage?.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -230,7 +225,7 @@ fun PlayerCard(
                         .fillMaxWidth()
                 ) {
                     Text(
-                        text = "Teamfight: " + playerStats.second?.teamfightAverage.toString(),
+                        text = "Teamfight: \n" + playerStats.second?.teamfightAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -241,7 +236,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Rosh: " + playerStats.second?.roshanAverage.toString(),
+                        text = "Rosh: \n" + playerStats.second?.roshanAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -252,7 +247,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Courier: " + playerStats.second?.courierAverage.toString(),
+                        text = "Courier: \n" + playerStats.second?.courierAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -271,7 +266,7 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Wards: " + playerStats.second?.wardsAverage.toString(),
+                            text = "Wards: \n" + playerStats.second?.wardsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -282,7 +277,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Stacks: " + playerStats.second?.campsAverage.toString(),
+                            text = "Stacks: \n" + playerStats.second?.campsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -293,7 +288,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Lotuses: " + playerStats.second?.lotusesAverage?.toString(),
+                            text = "Lotuses: \n" + playerStats.second?.lotusesAverage?.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -309,7 +304,7 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Watchers: " + playerStats.second?.watchersAverage.toString(),
+                            text = "Watchers: \n" + playerStats.second?.watchersAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -320,7 +315,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Runes: " + playerStats.second?.runesAverage.toString(),
+                            text = "Runes: \n" + playerStats.second?.runesAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -331,7 +326,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Smokes: " + playerStats.second?.smokesAverage.toString(),
+                            text = "Smokes: \n" + playerStats.second?.smokesAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -367,36 +362,33 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Deaths: " + playerStats.second?.deathsTop.toString(),
+                            text = "Deaths: \n" + playerStats.second?.deathsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Kills: " + playerStats.second?.killsTop.toString(),
+                            text = "Kills: \n" + playerStats.second?.killsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Creeps: " + playerStats.second?.creepsTop.toString(),
+                            text = "Creeps: \n" + playerStats.second?.creepsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
@@ -408,36 +400,33 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "GPM: " + playerStats.second?.gpmTop.toString(),
+                            text = "GPM: \n" + playerStats.second?.gpmTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Towers: " + playerStats.second?.towersTop.toString(),
+                            text = "Towers: \n" + playerStats.second?.towersTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
                         )
 
                         Text(
-                            text = "Stones: " + playerStats.second?.madstoneTop.toString(),
+                            text = "Stones: \n" + playerStats.second?.madstoneTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
                                 textAlign = TextAlign.Center,
-                                color = Color.Red
                             ),
                             modifier = Modifier
                                 .weight(0.33f)
@@ -452,7 +441,7 @@ fun PlayerCard(
                         .fillMaxWidth()
                 ) {
                     Text(
-                        text = "Stuns: " + playerStats.second?.stunsTop.toString(),
+                        text = "Stuns: \n" + playerStats.second?.stunsTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -463,7 +452,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Torm: " + playerStats.second?.tormentorTop.toString(),
+                        text = "Torm: \n" + playerStats.second?.tormentorTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -474,7 +463,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "FB: " + playerStats.second?.fbTop?.toString(),
+                        text = "FB: \n" + playerStats.second?.fbTop?.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -490,7 +479,7 @@ fun PlayerCard(
                         .fillMaxWidth()
                 ) {
                     Text(
-                        text = "Teamfight: " + playerStats.second?.teamfightTop.toString(),
+                        text = "Teamfight: \n" + playerStats.second?.teamfightTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -501,7 +490,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Rosh: " + playerStats.second?.roshanTop.toString(),
+                        text = "Rosh: \n" + playerStats.second?.roshanTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -512,7 +501,7 @@ fun PlayerCard(
                     )
 
                     Text(
-                        text = "Courier: " + playerStats.second?.courierTop.toString(),
+                        text = "Courier: \n" + playerStats.second?.courierTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
                             fontSize = 14.sp,
@@ -531,7 +520,7 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Wards: " + playerStats.second?.wardsTop.toString(),
+                            text = "Wards: \n" + playerStats.second?.wardsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -542,7 +531,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Stacks: " + playerStats.second?.campsTop.toString(),
+                            text = "Stacks: \n" + playerStats.second?.campsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -553,7 +542,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Lotuses: " + playerStats.second?.lotusesTop?.toString(),
+                            text = "Lotuses: \n" + playerStats.second?.lotusesTop?.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -569,7 +558,7 @@ fun PlayerCard(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = "Watchers: " + playerStats.second?.watchersTop.toString(),
+                            text = "Watchers: \n" + playerStats.second?.watchersTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -580,7 +569,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Runes: " + playerStats.second?.runesTop.toString(),
+                            text = "Runes: \n" + playerStats.second?.runesTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -591,7 +580,7 @@ fun PlayerCard(
                         )
 
                         Text(
-                            text = "Smokes: " + playerStats.second?.smokesTop.toString(),
+                            text = "Smokes: \n" + playerStats.second?.smokesTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 14.sp,
@@ -624,6 +613,8 @@ fun PlayerCard(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 15.sp,
                             ),
+                            modifier = Modifier
+                                .weight(1f)
                         )
 
                         Text(
@@ -657,6 +648,8 @@ fun PlayerCard(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 15.sp,
                             ),
+                            modifier = Modifier
+                                .weight(1f)
                         )
 
                         Text(

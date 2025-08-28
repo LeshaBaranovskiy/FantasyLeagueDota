@@ -50,6 +50,7 @@ import org.jetbrains.compose.resources.painterResource
 fun SimpleDropdown(
     selectedEmblem: Emblems,
     options: List<Emblems?>,
+    borderColor: Color,
     label: String = "Select emblem",
     onSelected: (Emblems) -> Unit,
     modifier: Modifier
@@ -86,7 +87,7 @@ fun SimpleDropdown(
                 .defaultMinSize(minHeight = 56.dp)
                 .border(
                     1.dp,
-                    color = Color(0xFF000000),
+                    color = borderColor,
                     RoundedCornerShape(8.dp)
                 )
                 .clip(RoundedCornerShape(8.dp))
