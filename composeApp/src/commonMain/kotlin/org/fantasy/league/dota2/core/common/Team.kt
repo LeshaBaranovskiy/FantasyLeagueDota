@@ -17,6 +17,7 @@ import fantasyleaguedota.composeapp.generated.resources.logo_tidebound
 import fantasyleaguedota.composeapp.generated.resources.logo_tundra
 import fantasyleaguedota.composeapp.generated.resources.logo_wildcart
 import fantasyleaguedota.composeapp.generated.resources.logo_xtreme
+import fantasyleaguedota.composeapp.generated.resources.logo_yakutou
 import org.jetbrains.compose.resources.DrawableResource
 
 sealed class Team(
@@ -39,4 +40,5 @@ sealed class Team(
     object Heroic: Team(Res.drawable.logo_heroic)
     object XtremeGaming: Team(Res.drawable.logo_xtreme)
     object Wildcart: Team(Res.drawable.logo_wildcart)
+    object YakultBrother: Team(Res.drawable.logo_yakutou)
 }
