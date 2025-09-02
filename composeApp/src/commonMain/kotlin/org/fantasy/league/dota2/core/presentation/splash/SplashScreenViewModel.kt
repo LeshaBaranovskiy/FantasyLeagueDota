@@ -317,7 +317,7 @@ class SplashScreenViewModel: ViewModel() {
                     it.playerInfo.find { it.steamId == player.steamId }?.stuns ?: 0f
                 }
 
-                val average = (list.average() * 28)
+                val average = (list.average() * 15)
                 if (average.isNaN().not()) average.roundToInt() else -1
             }
 
@@ -326,7 +326,7 @@ class SplashScreenViewModel: ViewModel() {
                     it.playerInfo.find { it.steamId == player.steamId }?.stuns ?: 0f
                 }
 
-                val average = (list.sortedByDescending { it }.take(3).average() * 28)
+                val average = (list.sortedByDescending { it }.take(3).average() * 15)
                 if (average.isNaN().not()) average.roundToInt() else -1
             }
 

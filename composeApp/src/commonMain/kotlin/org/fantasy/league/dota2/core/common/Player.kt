@@ -23,7 +23,7 @@ sealed class Player(
             shiro, NothingToSay, Faith_bian, planet, y,
 
             // Gaimin Glidiators
-            watson, Quinn, Ace, tofu, Malady,
+//            watson, Quinn, Ace, tofu, Malady,
 
             // Team Spirit
             Yatoro, Larl, Collapse, rue, Miposhka,

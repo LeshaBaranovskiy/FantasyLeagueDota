@@ -96,7 +96,7 @@ fun PlayerCard(
                             ")",
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp
+                        fontSize = 18.sp
                     ),
                     modifier = Modifier
                         .padding(vertical = 4.dp)
@@ -111,7 +111,7 @@ fun PlayerCard(
                             text = "Deaths: \n" + playerStats.second?.deathsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -122,7 +122,7 @@ fun PlayerCard(
                             text = "Kills: \n" + playerStats.second?.killsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -133,7 +133,7 @@ fun PlayerCard(
                             text = "Creeps: \n" + playerStats.second?.creepsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -149,7 +149,7 @@ fun PlayerCard(
                             text = "GPM: \n" + playerStats.second?.gpmAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -160,7 +160,7 @@ fun PlayerCard(
                             text = "Towers: \n" + playerStats.second?.towersAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -171,7 +171,7 @@ fun PlayerCard(
                             text = "Stones: \n" + playerStats.second?.madstoneAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -190,7 +190,7 @@ fun PlayerCard(
                         text = "Stuns: \n" + playerStats.second?.stunsAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -201,7 +201,7 @@ fun PlayerCard(
                         text = "Torm: \n" + playerStats.second?.tormentorAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -212,7 +212,7 @@ fun PlayerCard(
                         text = "FB: \n" + playerStats.second?.fbAverage?.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -228,7 +228,7 @@ fun PlayerCard(
                         text = "Teamfight: \n" + playerStats.second?.teamfightAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -239,7 +239,7 @@ fun PlayerCard(
                         text = "Rosh: \n" + playerStats.second?.roshanAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -250,7 +250,7 @@ fun PlayerCard(
                         text = "Courier: \n" + playerStats.second?.courierAverage.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -269,7 +269,7 @@ fun PlayerCard(
                             text = "Wards: \n" + playerStats.second?.wardsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -280,7 +280,7 @@ fun PlayerCard(
                             text = "Stacks: \n" + playerStats.second?.campsAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -291,7 +291,7 @@ fun PlayerCard(
                             text = "Lotuses: \n" + playerStats.second?.lotusesAverage?.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -307,7 +307,7 @@ fun PlayerCard(
                             text = "Watchers: \n" + playerStats.second?.watchersAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -318,7 +318,7 @@ fun PlayerCard(
                             text = "Runes: \n" + playerStats.second?.runesAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -329,7 +329,7 @@ fun PlayerCard(
                             text = "Smokes: \n" + playerStats.second?.smokesAverage.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -350,7 +350,7 @@ fun PlayerCard(
                     })",
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp
+                        fontSize = 18.sp
                     ),
                     modifier = Modifier
                         .padding(vertical = 4.dp)
@@ -365,7 +365,7 @@ fun PlayerCard(
                             text = "Deaths: \n" + playerStats.second?.deathsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -376,7 +376,7 @@ fun PlayerCard(
                             text = "Kills: \n" + playerStats.second?.killsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -387,7 +387,7 @@ fun PlayerCard(
                             text = "Creeps: \n" + playerStats.second?.creepsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -403,7 +403,7 @@ fun PlayerCard(
                             text = "GPM: \n" + playerStats.second?.gpmTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -414,7 +414,7 @@ fun PlayerCard(
                             text = "Towers: \n" + playerStats.second?.towersTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -425,7 +425,7 @@ fun PlayerCard(
                             text = "Stones: \n" + playerStats.second?.madstoneTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -444,7 +444,7 @@ fun PlayerCard(
                         text = "Stuns: \n" + playerStats.second?.stunsTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -455,7 +455,7 @@ fun PlayerCard(
                         text = "Torm: \n" + playerStats.second?.tormentorTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -466,7 +466,7 @@ fun PlayerCard(
                         text = "FB: \n" + playerStats.second?.fbTop?.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -482,7 +482,7 @@ fun PlayerCard(
                         text = "Teamfight: \n" + playerStats.second?.teamfightTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -493,7 +493,7 @@ fun PlayerCard(
                         text = "Rosh: \n" + playerStats.second?.roshanTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -504,7 +504,7 @@ fun PlayerCard(
                         text = "Courier: \n" + playerStats.second?.courierTop.toString(),
                         style = TextStyle(
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center,
                         ),
                         modifier = Modifier
@@ -523,7 +523,7 @@ fun PlayerCard(
                             text = "Wards: \n" + playerStats.second?.wardsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -534,7 +534,7 @@ fun PlayerCard(
                             text = "Stacks: \n" + playerStats.second?.campsTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -545,7 +545,7 @@ fun PlayerCard(
                             text = "Lotuses: \n" + playerStats.second?.lotusesTop?.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -561,7 +561,7 @@ fun PlayerCard(
                             text = "Watchers: \n" + playerStats.second?.watchersTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -572,7 +572,7 @@ fun PlayerCard(
                             text = "Runes: \n" + playerStats.second?.runesTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -583,7 +583,7 @@ fun PlayerCard(
                             text = "Smokes: \n" + playerStats.second?.smokesTop.toString(),
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp,
+                                fontSize = 15.sp,
                                 textAlign = TextAlign.Center,
                             ),
                             modifier = Modifier
@@ -596,7 +596,7 @@ fun PlayerCard(
                     text = "Prefixes",
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp
+                        fontSize = 18.sp
                     ),
                     modifier = Modifier
                         .padding(vertical = 4.dp)
@@ -605,24 +605,15 @@ fun PlayerCard(
                 playerStats.second?.prefixes()?.sortedByDescending { it.second }?.forEach { prefix ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         Text(
-                            text = prefix.first.name,
+                            text = "${prefix.first.name} | ${prefix.second.roundToInt()}%",
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 15.sp,
                             ),
                             modifier = Modifier
-                                .weight(1f)
-                        )
-
-                        Text(
-                            text = "${prefix.second.roundToInt()}%",
-                            style = TextStyle(
-                                fontWeight = FontWeight.Medium,
-                                fontSize = 15.sp,
-                            ),
+                                .padding(bottom = 6.dp)
                         )
                     }
                 }
@@ -631,33 +622,33 @@ fun PlayerCard(
                     text = "Suffixes",
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp
+                        fontSize = 18.sp
                     ),
                     modifier = Modifier
                         .padding(vertical = 4.dp)
                 )
 
+                Text(
+                    text = "Choose \"Of The Octopus\" over everything else / Завжди вибирайте \"Послідовник Восьминога\"",
+                    style = TextStyle(
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 15.sp,
+                    ),
+                    modifier = Modifier
+                )
+
                 playerStats.second?.suffixes()?.sortedByDescending { it.second }?.forEach { suffix ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         Text(
-                            text = suffix.first.name,
+                            text = "${suffix.first.name} | ${suffix.second.roundToInt()}%",
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium,
                                 fontSize = 15.sp,
                             ),
                             modifier = Modifier
-                                .weight(1f)
-                        )
-
-                        Text(
-                            text = "${suffix.second.roundToInt()}%",
-                            style = TextStyle(
-                                fontWeight = FontWeight.Medium,
-                                fontSize = 15.sp,
-                            ),
+                                .padding(bottom = 6.dp)
                         )
                     }
                 }

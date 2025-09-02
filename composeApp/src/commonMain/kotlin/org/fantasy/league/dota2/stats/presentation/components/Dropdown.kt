@@ -84,9 +84,9 @@ fun SimpleDropdown(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable(onClick = { expanded = true })
-                .defaultMinSize(minHeight = 56.dp)
+                .defaultMinSize(minHeight = 62.dp)
                 .border(
-                    1.dp,
+                    1.8.dp,
                     color = borderColor,
                     RoundedCornerShape(8.dp)
                 )
