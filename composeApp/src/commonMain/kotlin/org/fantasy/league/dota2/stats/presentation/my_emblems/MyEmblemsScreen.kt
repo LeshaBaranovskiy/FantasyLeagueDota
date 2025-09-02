@@ -127,13 +127,13 @@ fun MyEmblemsScreen(
                             Color(0xFF3F1818),
                             RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 4.dp)
+                        .padding(vertical = 6.dp)
                 ) {
                     Text(
                         text = "Core",
                         style = TextStyle(
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 16.sp,
+                            fontSize = 18.sp,
                             color = if (roleSelected.value == Role.CORE) Color.White else Color.Black
                         ),
                     )
@@ -155,13 +155,13 @@ fun MyEmblemsScreen(
                             Color(0xFF3F1818),
                             RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 4.dp)
+                        .padding(vertical = 6.dp)
                 ) {
                     Text(
                         text = "Mid",
                         style = TextStyle(
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 16.sp,
+                            fontSize = 18.sp,
                             color = if (roleSelected.value == Role.MID) Color.White else Color.Black
                         ),
                     )
@@ -183,13 +183,13 @@ fun MyEmblemsScreen(
                             Color(0xFF3F1818),
                             RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 4.dp)
+                        .padding(vertical = 6.dp)
                 ) {
                     Text(
                         text = "Support",
                         style = TextStyle(
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 16.sp,
+                            fontSize = 18.sp,
                             color = if (roleSelected.value == Role.SUPPORT) Color.White else Color.Black
                         ),
                     )
@@ -230,13 +230,13 @@ fun MyEmblemsScreen(
                             Color(0xFF3F1818),
                             RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 4.dp, horizontal = 12.dp)
+                        .padding(vertical = 6.dp, horizontal = 12.dp)
                 ) {
                     Text(
                         text = "By average",
                         style = TextStyle(
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 16.sp,
+                            fontSize = 18.sp,
                             color = if (filterSelected.value == Filter.BY_AVERAGE) Color.White else Color.Black
                         ),
                     )
@@ -257,13 +257,13 @@ fun MyEmblemsScreen(
                             Color(0xFF3F1818),
                             RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 4.dp, horizontal = 12.dp)
+                        .padding(vertical = 6.dp, horizontal = 12.dp)
                 ) {
                     Text(
                         text = "By top",
                         style = TextStyle(
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 16.sp,
+                            fontSize = 18.sp,
                             color = if (filterSelected.value == Filter.BY_TOP) Color.White else Color.Black
                         ),
                     )
@@ -292,7 +292,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = firstCoreRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -331,7 +331,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = firstCoreGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -370,7 +370,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = secondCoreRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -437,7 +437,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = midRedEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -476,7 +476,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = midGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -515,7 +515,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = midBlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -582,7 +582,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = support1BlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -621,7 +621,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = supportGreenEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )
@@ -660,7 +660,7 @@ fun MyEmblemsScreen(
 
                     OutlinedTextField(
                         value = support2BlueEmblemPercent.value?.roundToInt()?.toString() ?: "",
-                        label = {
+                        placeholder = {
                             Text(
                                 "Buff, %"
                             )

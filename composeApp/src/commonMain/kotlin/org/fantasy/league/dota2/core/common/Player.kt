@@ -23,7 +23,7 @@ sealed class Player(
             shiro, NothingToSay, Faith_bian, planet, y,
 
             // Gaimin Glidiators
-            watson, Quinn, Ace, tofu, Malady,
+//            watson, Quinn, Ace, tofu, Malady,
 
             // Team Spirit
             Yatoro, Larl, Collapse, rue, Miposhka,
@@ -56,7 +56,10 @@ sealed class Player(
             Ame, Xm, Xxs, XinQ, xNova,
 
             // Wildcard
-            Yamsun, RCY, Fayde, Bignum, Speeed
+            Yamsun, RCY, Fayde, Bignum, Speeed,
+
+            //Yakult Brothers
+            flyfly, Emo, Beyond, Boboka, Oli
         )
     }
 
@@ -171,5 +174,12 @@ sealed class Player(
     object Fayde: Player(name = "Fayde", steamId = 76561198120384745, Wildcart, Role.CORE)
     object Bignum: Player(name = "Bignum", steamId = 76561198050689479, Wildcart, Role.SUPPORT)
     object Speeed: Player(name = "Speeed", steamId = 76561198151628603, Wildcart, Role.SUPPORT)
+
+    // Yakult Brothers
+    object flyfly: Player(name = "flyfly", steamId = 76561198128294443, YakultBrother, Role.CORE)
+    object Emo: Player(name = "Emo", steamId = 76561198162483696, YakultBrother, Role.MID)
+    object Beyond: Player(name = "Beyond", steamId = 76561198099297052, YakultBrother, Role.CORE)
+    object Boboka: Player(name = "Boboka", steamId = 76561198168095042, YakultBrother, Role.SUPPORT)
+    object Oli: Player(name = "Oli", steamId = 76561198061525700, YakultBrother, Role.SUPPORT)
 
 }

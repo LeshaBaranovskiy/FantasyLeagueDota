@@ -87,7 +87,7 @@ fun CalculatorPlayerCard(
 
         if (playerStats.playerStats.first.team == Team.Wildcart || playerStats.playerStats.first.team == Team.Nemesis) {
             Text(
-                text = "Цей гравець з команди-аутсайдера та через брак кількість матчів по яким був аналіз обмежена. НЕ рекомендую обирати",
+                text = "Цей гравець з команди-аутсайдера. НЕ рекомендую обирати",
                 style = TextStyle(
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 16.sp
@@ -101,7 +101,7 @@ fun CalculatorPlayerCard(
             text = "Prefixes",
             style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 16.sp
+                fontSize = 18.sp
             ),
             modifier = Modifier
                 .padding(vertical = 4.dp)
@@ -110,24 +110,15 @@ fun CalculatorPlayerCard(
         playerStats.playerStats.second?.prefixes()?.sortedByDescending { it.second }?.take(5)?.forEach { prefix ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 Text(
-                    text = prefix.first.name,
+                    text = "${prefix.first.name} | ${prefix.second.roundToInt()}%",
                     style = TextStyle(
                         fontWeight = FontWeight.Medium,
-                        fontSize = 15.sp,
+                        fontSize = 16.sp,
                     ),
                     modifier = Modifier
-                        .weight(1f)
-                )
-
-                Text(
-                    text = "${prefix.second.roundToInt()}%",
-                    style = TextStyle(
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 15.sp,
-                    ),
+                        .padding(bottom = 6.dp)
                 )
             }
         }
@@ -136,33 +127,34 @@ fun CalculatorPlayerCard(
             text = "Suffixes",
             style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 16.sp
+                fontSize = 18.sp
             ),
             modifier = Modifier
                 .padding(vertical = 4.dp)
         )
 
+        Text(
+            text = "Choose \"Of The Octopus\" over everything else / Завжди вибирайте \"Послідовник Восьминога\"",
+            style = TextStyle(
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 16.sp,
+            ),
+            modifier = Modifier
+                .padding(bottom = 6.dp)
+        )
+
         playerStats.playerStats.second?.suffixes()?.sortedByDescending { it.second }?.take(5)?.forEach { suffix ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 Text(
-                    text = suffix.first.name,
+                    text = "${suffix.first.name} | ${suffix.second.roundToInt()}%",
                     style = TextStyle(
                         fontWeight = FontWeight.Medium,
-                        fontSize = 15.sp,
+                        fontSize = 16.sp,
                     ),
                     modifier = Modifier
-                        .weight(1f)
-                )
-
-                Text(
-                    text = "${suffix.second.roundToInt()}%",
-                    style = TextStyle(
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 15.sp,
-                    ),
+                        .padding(bottom = 6.dp)
                 )
             }
         }

@@ -86,8 +86,8 @@ android {
         applicationId = "org.fantasy.league.dota2"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.2"
     }
     packaging {
         resources {
@@ -117,10 +117,18 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg)
             packageName = "Fantasy League Calculator"
-            packageVersion = "1.0.0"
+            packageVersion = "1.1.0"
 
             windows {
                 iconFile.set(project.file("src/desktopMain/resources/icons/fantasy_league_logo.ico"))
+            }
+        }
+
+        buildTypes {
+            release {
+                proguard {
+                    isEnabled.set(false)
+                }
             }
         }
     }
